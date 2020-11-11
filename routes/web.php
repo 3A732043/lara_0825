@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
-Route::get('post', [PostsController::class, 'show'])->name('posts.show');
+Route::get('post', [PostsController::class, 'post'])->name('posts.post');
 Route::get('contact', [PostsController::class, 'contact'])->name('posts.contact');
 Route::get('about', [PostsController::class, 'about'])->name('posts.about');
