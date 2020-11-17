@@ -33,10 +33,16 @@ Route::get('/', function () {
 
     $post = Post::find(5);
     dd($post);
-    */
 
     $post = Post::where('id', '<', 11)->orderBy('id', 'DESC')->get();
     dd($post);
+    */
+
+    $post = Post::find(5);
+    $post->update([
+        'title' => 'updated title',
+        'content' => 'updated content',
+    ]);
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
