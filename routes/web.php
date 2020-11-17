@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 use App\Http\Controllers\PostsController;
 
 /*
@@ -15,7 +16,11 @@ use App\Http\Controllers\PostsController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    //return view('index');
+    $post = new Post();
+    $post->title = 'test title';
+    $post->content = 'test content';
+    $post->save();
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
