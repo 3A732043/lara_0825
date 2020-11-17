@@ -17,10 +17,17 @@ use App\Http\Controllers\PostsController;
 
 Route::get('/', function () {
     //return view('index');
+    /*
     $post = new Post();
     $post->title = 'test title';
     $post->content = 'test content';
     $post->save();
+    */
+
+    Post::create([
+        'title' => 'test title 2',
+        'content' => 'test content 2',
+    ]);
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
