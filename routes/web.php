@@ -30,9 +30,12 @@ Route::get('/', function () {
 
     $posts=Post::all();
     dd($posts);
-    */
-    
+
     $post = Post::find(5);
+    dd($post);
+    */
+
+    $post = Post::where('id', '<', 11)->orderBy('id', 'DESC')->get();
     dd($post);
 });
 
