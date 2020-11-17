@@ -27,10 +27,13 @@ Route::get('/', function () {
         'title' => 'test title 2',
         'content' => 'test content 2',
     ]);
-    */
 
     $posts=Post::all();
     dd($posts);
+    */
+    
+    $post = Post::find(5);
+    dd($post);
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
