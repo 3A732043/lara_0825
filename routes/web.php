@@ -47,10 +47,12 @@ Route::get('/', function () {
     $post->title = 'saved title';
     $post->content = 'saved content';
     $post->save();
-    */
 
     $post = Post::find(2);
     $post->delete();
+    */
+
+    Post::destroy(8);
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
