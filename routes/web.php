@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\Comment;
 use App\Http\Controllers\PostsController;
 
 /*
@@ -63,11 +64,15 @@ Route::get('/', function () {
 
     $ninthPost = Post::find(9);
     dd($ninthPost);
-    */
+
     $searchPost = Post::orderBy('id', 'DESC')->first();
     dd($searchPost);
+    */
 
-
+    $comment = new Comment();
+    $comment->content = 'ddd';
+    $comment->post_id = '1';
+    $comment->save();
 
 });
 
