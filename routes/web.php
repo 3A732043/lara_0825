@@ -54,9 +54,12 @@ Route::get('/', function () {
     Post::destroy(8);
 
     Post::destroy(3, 5, 7);
-    */
+
     $allPosts = Post::all();
     dd($allPosts);
+    */
+    $savedPosts = Post::where('title', 'saved title')->get();
+    dd($savedPosts);
 
 });
 
