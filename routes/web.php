@@ -52,9 +52,11 @@ Route::get('/', function () {
     $post->delete();
 
     Post::destroy(8);
-    */
-    
+
     Post::destroy(3, 5, 7);
+    */
+    $allPosts = Post::all();
+    dd($allPosts);
 
 });
 
