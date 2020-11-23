@@ -57,9 +57,12 @@ Route::get('/', function () {
 
     $allPosts = Post::all();
     dd($allPosts);
-    */
+
     $savedPosts = Post::where('title', 'saved title')->get();
     dd($savedPosts);
+    */
+    $ninthPost = Post::find(9);
+    dd($ninthPost);
 
 });
 
