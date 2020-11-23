@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-use App\Models\Comment;
+//use App\Models\Comment;
 use App\Http\Controllers\PostsController;
 
 /*
@@ -67,13 +67,18 @@ Route::get('/', function () {
 
     $searchPost = Post::orderBy('id', 'DESC')->first();
     dd($searchPost);
-    */
 
     $comment = new Comment();
     $comment->content = 'CYC';
     $comment->post_id = '3';
     $comment->save();
 
+    */
+
+    $post=Post::find(1);
+    foreach($post->comments as $comment){
+        echo $comment->content.'<br>';
+    }
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
