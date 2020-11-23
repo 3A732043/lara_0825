@@ -70,8 +70,8 @@ Route::get('/', function () {
     */
 
     $comment = new Comment();
-    $comment->content = 'ddd';
-    $comment->post_id = '1';
+    $comment->content = 'you';
+    $comment->post_id = '2';
     $comment->save();
 
 });
