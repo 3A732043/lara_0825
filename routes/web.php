@@ -60,9 +60,14 @@ Route::get('/', function () {
 
     $savedPosts = Post::where('title', 'saved title')->get();
     dd($savedPosts);
-    */
+
     $ninthPost = Post::find(9);
     dd($ninthPost);
+    */
+    $searchPost = Post::orderBy('id', 'DESC')->first();
+    dd($searchPost);
+
+
 
 });
 
